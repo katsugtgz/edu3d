@@ -9,24 +9,31 @@
   },
   "private": true,
   "dependencies": {
+    "@react-three/fiber": "^9.8.2",
     "@remotion/cli": "4.0.540",
+    "@remotion/three": "^4.0.540",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "remotion": "4.0.540"
+    "remotion": "4.0.540",
+    "three": "^0.187.0"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.540",
     "@types/react": "19.3.0",
+    "@types/three": "^0.187.0",
     "@types/web": "0.0.166",
     "eslint": "10.12.0",
     "prettier": "3.8.1",
-    "typescript": "5.9.3"
+    "typescript": "^5.9.3"
   },
   "scripts": {
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src && tsc",
+    "stills": "remotion still src/index.ts EduMain out/stills/hook.png --frame=50 --image-format=png && remotion still src/index.ts EduMain out/stills/mid.png --frame=320 --image-format=png && remotion still src/index.ts EduMain out/stills/outro.png --frame=860 --image-format=png",
+    "render": "remotion render src/index.ts EduMain out/final.mp4"
   },
   "allowScripts": {
     "esbuild": false
